@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNLab</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: url('br2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: rgb(160, 190, 212);
+            text-align: center;
+        }
+
+        /* Style the navigation menu */
+        nav {
+            display: flex;
+            background-color: #333;
+        }
+
+        /* Style each navigation item */
+        .nav-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Style the navigation links */
+        .nav-item a {
+            color: white;
+            padding: 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        /* Change color of navigation links on hover */
+        .nav-item a:hover {
+            background-color: #575757;
+        }
+
+        /* Style the Contact dropdown */
+        .contact-dropdown {
+            position: relative;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .contact-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #dac2fb;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(208, 22, 255, 0.871);
+            z-index: 1;
+            top: 100%; /* Position the dropdown below the Contact link */
+            left: 0;
+        }
+
+        /* Links inside the contact dropdown */
+        .contact-dropdown-content a {
+            color: rgba(6, 6, 16, 0.921);
+            padding: 12px 16px;
+            text-decoration: underline;
+            display: block;
+        }
+
+        /* Change color of contact links on hover */
+        .contact-dropdown-content a:hover {
+            background-color: #dac2fb;
+        }
+
+        /* Show the contact dropdown menu on hover */
+        .contact-dropdown:hover .contact-dropdown-content {
+            display: block;
+        }
+
+        /* Add spacing between items if needed */
+        .nav-item + .nav-item {
+            margin-left: 20px;
+        }
+
+        nav li {
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: rgb(144, 242, 235);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 60%;
+        }
+
+        .content h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .content p {
+            font-size: 20px;
+            margin: 10px 0 20px 0;
+            color: rgb(16, 189, 237);
+        }
+
+        .start-button {
+            background-color: red;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .start-button:hover {
+            background-color: rgb(192, 196, 56);
+        }
+
+        /* Shape animations */
+        .shape-container {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .shape {
+            background: linear-gradient(to right, #d83efb, #ce7deb);
+            border-radius: 30px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: popIn 1s forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .shape:nth-child(1) {
+            width: 150px;
+            height: 40px;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 200px;
+            height: 50px;
+            animation-delay: 0.5s;
+        }
+
+        .shape:nth-child(3) {
+            width: 250px;
+            height: 60px;
+            animation-delay: 1s;
+        }
+
+        .shape:nth-child(4) {
+            width: 300px;
+            height: 70px;
+            animation-delay: 1.5s;
+        }
+
+        .shape:nth-child(5) {
+            width: 350px;
+            height: 80px;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(6) {
+            width: 400px;
+            height: 80px;
+            animation-delay: 2.5s;
+        }
+        .shape:nth-child(7) {
+            width: 350px;
+            height: 80px;
+            animation-delay: 3s;
+        }
+        .shape:nth-child(8) {
+            width: 250px;
+            height: 70px;
+            animation-delay: 3.5s;
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-item">
+            <a href="http://127.0.0.1:5500/html">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="http://127.0.0.1:5500/login.html">Login</a>
+        </div>
+        <div class="nav-item">
+            <a href="#">Leaderboard</a>
+        </div>
+        <div class="nav-item contact-dropdown">
+            <a href="#">Contact</a>
+            <div class="contact-dropdown-content">
+                <a href="#">Email</a>
+                <a href="#">Phone</a>
+                <a href="#">Address</a>
+            </div>
+        </div>
+    </nav>  
+    <div class="content">
+        <h1>Viva Website</h1>
+        <p>Begin your Viva Voce session here</p>
+        <a href="" class="start-button">Start The Viva</a>
+    </div>
+
+    <!-- Pink shapes animation -->
+    <div class="shape-container">
+        <a href="#" class="shape">Link 1</a>
+        <a href="#" class="shape">Link 2</a>
+        <a href="#" class="shape">Link 3</a>
+        <a href="#" class="shape">Link 4</a>
+        <a href="#" class="shape">Link 5</a>
+        <a href="#" class="shape">Link 6</a>
+        <a href="#" class="shape">Link 7</a>
+        <a href="#" class="shape">Link 8</a>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAyCELWwpeo9BBTqxV1faPWNnwY87fWMqQ",
+          authDomain: "cn-lab-b1f77.firebaseapp.com",
+          projectId: "cn-lab-b1f77",
+          storageBucket: "cn-lab-b1f77.appspot.com",
+          messagingSenderId: "274521236864",
+          appId: "1:274521236864:web:9bad4396663c6d951a4d65",
+          measurementId: "G-GRZ88G1F9P"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>
+ 
